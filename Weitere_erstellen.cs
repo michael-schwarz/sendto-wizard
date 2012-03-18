@@ -74,7 +74,7 @@ namespace sendto_editieren
 		{
 			if(comboBox1.SelectedIndex == 0)
 			{
-				FileInfo FI = new FileInfo(String.Concat(Environment.GetFolderPath(Environment.SpecialFolder.SendTo),"\\Desktop (Verknüpfung erstellen).DeskLink"));
+				FileInfo FI = new FileInfo(String.Concat(Environment.GetFolderPath(Environment.SpecialFolder.SendTo),"\\Desktop (create shortcut).DeskLink"));
 				FileStream FS = FI.Create();
 				FS.Close();
 				this.Close();
@@ -86,7 +86,7 @@ namespace sendto_editieren
 				//E-Mail Empfänger
 				if(isXP())
 				{
-				FileInfo FI = new FileInfo(String.Concat(Environment.GetFolderPath(Environment.SpecialFolder.SendTo),"\\E-Mail-Empfänger.MAPIMail"));
+				FileInfo FI = new FileInfo(String.Concat(Environment.GetFolderPath(Environment.SpecialFolder.SendTo),"\\Mail Recipient.MAPIMai"));
 				FileStream FS = FI.Create();
 				FS.Close();
 				this.Close();
@@ -117,7 +117,7 @@ namespace sendto_editieren
 				// E-Mail Empfänger
 				else
 				{
-				FileInfo FI = new FileInfo(String.Concat(Environment.GetFolderPath(Environment.SpecialFolder.SendTo),"\\E-Mail-Empfänger.MAPIMail"));
+				FileInfo FI = new FileInfo(String.Concat(Environment.GetFolderPath(Environment.SpecialFolder.SendTo),"\\Mail Recipient.MAPIMail"));
 				FileStream FS = FI.Create();
 				FS.Close();
 				this.Close();
@@ -136,7 +136,7 @@ namespace sendto_editieren
 			
 			if(comboBox1.SelectedIndex == 4)
 			{
-				FileInfo FI = new FileInfo(String.Concat(Environment.GetFolderPath(Environment.SpecialFolder.SendTo),"\\ZIP-komprimierten Ordner.ZFSendToTarget"));
+				FileInfo FI = new FileInfo(String.Concat(Environment.GetFolderPath(Environment.SpecialFolder.SendTo),"\\Compressed (zipped) Folder.ZFSendToTarget"));
 				FileStream FS = FI.Create();
 				FS.Close();
 				this.Close();

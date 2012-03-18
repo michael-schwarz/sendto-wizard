@@ -41,9 +41,8 @@ namespace sendto_editieren
 			this.listBox1 = new System.Windows.Forms.ListBox();
 			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.umbenennenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.button1 = new System.Windows.Forms.Button();
+			this.löschenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.button2 = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
 			this.contextMenuStrip1.SuspendLayout();
@@ -56,31 +55,28 @@ namespace sendto_editieren
 			this.listBox1.Name = "listBox1";
 			this.listBox1.Size = new System.Drawing.Size(432, 212);
 			this.listBox1.TabIndex = 0;
-			this.listBox1.SelectedIndexChanged += new System.EventHandler(this.ListBox1SelectedIndexChanged);
 			// 
 			// contextMenuStrip1
 			// 
 			this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.umbenennenToolStripMenuItem});
+									this.umbenennenToolStripMenuItem,
+									this.löschenToolStripMenuItem});
 			this.contextMenuStrip1.Name = "contextMenuStrip1";
-			this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
+			this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
 			// 
 			// umbenennenToolStripMenuItem
 			// 
 			this.umbenennenToolStripMenuItem.Name = "umbenennenToolStripMenuItem";
 			this.umbenennenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.umbenennenToolStripMenuItem.Text = "Umbenennen";
+			this.umbenennenToolStripMenuItem.Click += new System.EventHandler(this.UmbenennenToolStripMenuItemClick);
 			// 
-			// button1
+			// löschenToolStripMenuItem
 			// 
-			this.button1.Enabled = false;
-			this.button1.Location = new System.Drawing.Point(12, 278);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 1;
-			this.button1.Text = "Entfernen";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.Button1Click);
+			this.löschenToolStripMenuItem.Name = "löschenToolStripMenuItem";
+			this.löschenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.löschenToolStripMenuItem.Text = "Löschen";
+			this.löschenToolStripMenuItem.Click += new System.EventHandler(this.LöschenToolStripMenuItemClick);
 			// 
 			// button2
 			// 
@@ -91,17 +87,6 @@ namespace sendto_editieren
 			this.button2.Text = "Neu";
 			this.button2.UseVisualStyleBackColor = true;
 			this.button2.Click += new System.EventHandler(this.Button2Click);
-			// 
-			// button3
-			// 
-			this.button3.Enabled = false;
-			this.button3.Location = new System.Drawing.Point(191, 278);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(75, 23);
-			this.button3.TabIndex = 3;
-			this.button3.Text = "Bearbeiten";
-			this.button3.UseVisualStyleBackColor = true;
-			this.button3.Click += new System.EventHandler(this.Button3Click);
 			// 
 			// label1
 			// 
@@ -130,9 +115,7 @@ namespace sendto_editieren
 			this.ClientSize = new System.Drawing.Size(453, 323);
 			this.Controls.Add(this.linkLabel1);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.button3);
 			this.Controls.Add(this.button2);
-			this.Controls.Add(this.button1);
 			this.Controls.Add(this.listBox1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "MainForm";
@@ -141,13 +124,12 @@ namespace sendto_editieren
 			this.contextMenuStrip1.ResumeLayout(false);
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.ToolStripMenuItem löschenToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem umbenennenToolStripMenuItem;
 		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
 		private System.Windows.Forms.LinkLabel linkLabel1;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.ListBox listBox1;
 	}
 }
