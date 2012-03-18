@@ -15,21 +15,13 @@ namespace sendto_editieren
 		List<string> files;
 		List<bool> editable;
 		
-		MainForm diesesform;
 		public MainForm()
 		{
-
-			//
-			// The InitializeComponent() call is required for Windows Forms designer support.
-			//
 			InitializeComponent();
 
 			listBox1.MouseDown += new MouseEventHandler(listBox1_down);
 			
 			einlesen();
-			diesesform = this;
-			
-			
 		}
 		
 		public void einlesen()
@@ -121,14 +113,9 @@ namespace sendto_editieren
 		
 		void Button2Click(object sender, EventArgs e)
 		{		
-			Weitere_erstellen dialog = new Weitere_erstellen(diesesform);
+			Weitere_erstellen dialog = new Weitere_erstellen();
 			dialog.ShowDialog();
-		}
-		
-		public void eigene_verk_offnen()
-		{
-			eigene_verk dialog2 = new eigene_verk(diesesform);
-			dialog2.ShowDialog(diesesform);
+			einlesen();
 		}
 		
 		void LinkLabel1LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -145,8 +132,9 @@ namespace sendto_editieren
 		
 		void UmbenennenToolStripMenuItemClick(object sender, EventArgs e)
 		{
-			verk_edit bearbeiten= new verk_edit(diesesform,files[listBox1.SelectedIndex]);
+			verk_edit bearbeiten= new verk_edit(files[listBox1.SelectedIndex]);
 			bearbeiten.ShowDialog();
+			einlesen();
 		}
 	}
 }

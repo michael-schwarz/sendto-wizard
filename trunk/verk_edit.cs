@@ -1,12 +1,3 @@
-/*
- * Erstellt mit SharpDevelop.
- * Benutzer: Michael
- * Datum: 21.02.2009
- * Zeit: 12:05
- * 
- * Sie können diese Vorlage unter Extras > Optionen > Codeerstellung > Standardheader ändern.
- */
-
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -19,16 +10,14 @@ namespace sendto_editieren
 	/// </summary>
 	public partial class verk_edit : Form
 	{
-		MainForm hauptform;
 		string pfad;
 		string dateiname;
-		public verk_edit(MainForm hauptform_hand,string path)
+		public verk_edit(string path)
 		{
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
-			hauptform = hauptform_hand;
 			pfad =path;
 			dateiname = path.Replace(String.Concat(Environment.GetFolderPath(Environment.SpecialFolder.SendTo), "\\" ),"");
 			
@@ -61,9 +50,6 @@ namespace sendto_editieren
 			anzuzeigen= anzuzeigen.Replace(".mydocs","");
 			
 			textBox1.Text = anzuzeigen;
-			//
-			// TODO: Add constructor code after the InitializeComponent() call.
-			//
 		}
 		
 		void Label1Click(object sender, EventArgs e)
@@ -83,9 +69,8 @@ namespace sendto_editieren
 			
 			try
 			{
-			File.Move(pfad,neuername);
-			this.Close();
-			hauptform.einlesen();
+				File.Move(pfad,neuername);
+				this.Close();
 			}
 			catch(IOException)
 			{
@@ -93,6 +78,7 @@ namespace sendto_editieren
 			}
 
 		}
+		
 		string endung_heraus(string name,string[] mgl)
 		{
 			foreach (string aktuell in mgl)

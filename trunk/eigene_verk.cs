@@ -19,18 +19,13 @@ namespace sendto_editieren
 	/// </summary>
 	public partial class eigene_verk : Form
 	{
-		MainForm hauptform;
 		string path;
-		public eigene_verk(MainForm sender)
+		public eigene_verk()
 		{
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
-			hauptform = sender;
-			//
-			// TODO: Add constructor code after the InitializeComponent() call.
-			//
 		}
 		
 		void Label1Click(object sender, EventArgs e)
@@ -63,7 +58,6 @@ namespace sendto_editieren
 					sc.Description = textBox1.Text;  
 					sc.Save();
 					this.Close();
-					hauptform.einlesen();
 				}
 			}
 		}

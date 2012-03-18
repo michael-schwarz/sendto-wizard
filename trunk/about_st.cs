@@ -22,10 +22,6 @@ namespace sendto_editieren
 			//
 			InitializeComponent();
 			textBox2.Text = Application.ProductVersion;
-			
-			//
-			// TODO: Add constructor code after the InitializeComponent() call.
-			//
 		}
 		
 		void LinkLabel1LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

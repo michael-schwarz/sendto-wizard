@@ -19,15 +19,8 @@ namespace sendto_editieren
 	/// </summary>
 	public partial class Weitere_erstellen : Form
 	{
-		MainForm hauptform;
-		public Weitere_erstellen(MainForm sender)
-		{
-			//
-			// The InitializeComponent() call is required for Windows Forms designer support.
-			//
-			hauptform = sender;
-			
-		
+		public Weitere_erstellen()
+		{		
 			InitializeComponent();
 			comboBox1.SelectedIndex = 0;
 			
@@ -39,27 +32,12 @@ namespace sendto_editieren
 			{
 				comboBox1.Items.RemoveAt(3);	
 			}
-			//
-			// TODO: Add constructor code after the InitializeComponent() call.
-			//
 		}
 		
-	bool isXP()
-	{
- 		OperatingSystem myOSSystem = System.Environment.OSVersion;
-
-
- 			
-  		if (myOSSystem.Version.Major == 5)
-  				{
-					return true;
-  				}
-  		else
-  				{
-					return false;  					
-  				}
-
- }
+		bool isXP()
+		{
+  			return (System.Environment.OSVersion.Version.Major == 5);
+ 		}
 
 
 
@@ -72,75 +50,61 @@ namespace sendto_editieren
 		
 		void Button1Click(object sender, EventArgs e)
 		{
-			if(comboBox1.SelectedIndex == 0)
-			{
-				FileInfo FI = new FileInfo(String.Concat(Environment.GetFolderPath(Environment.SpecialFolder.SendTo),"\\Desktop (create shortcut).DeskLink"));
-				FileStream FS = FI.Create();
-				FS.Close();
-				this.Close();
-				hauptform.einlesen();
-			}
-			
-			if(comboBox1.SelectedIndex == 1)
-			{
-				//E-Mail Empfänger
-				if(isXP())
-				{
-				FileInfo FI = new FileInfo(String.Concat(Environment.GetFolderPath(Environment.SpecialFolder.SendTo),"\\Mail Recipient.MAPIMai"));
-				FileStream FS = FI.Create();
-				FS.Close();
-				this.Close();
-				hauptform.einlesen();
-				}
-				// Dokumente
-				else
-				{
-				FileInfo FI = new FileInfo(String.Concat(Environment.GetFolderPath(Environment.SpecialFolder.SendTo),"\\Dokumente.mydocs"));
-				FileStream FS = FI.Create();
-				FS.Close();
-				this.Close();
-				hauptform.einlesen();
-				}
-			}
-			
-			if(comboBox1.SelectedIndex == 2)
-			{
-				// Eigene Dateien
-				if(isXP())
-				{
-				FileInfo FI = new FileInfo(String.Concat(Environment.GetFolderPath(Environment.SpecialFolder.SendTo),"\\Eigene Dateien.mydocs"));
-				FileStream FS = FI.Create();
-				FS.Close();
-				this.Close();
-				hauptform.einlesen();	
-				}
-				// E-Mail Empfänger
-				else
-				{
-				FileInfo FI = new FileInfo(String.Concat(Environment.GetFolderPath(Environment.SpecialFolder.SendTo),"\\Mail Recipient.MAPIMail"));
-				FileStream FS = FI.Create();
-				FS.Close();
-				this.Close();
-				hauptform.einlesen();
-				}
-			}
-			
 			if(comboBox1.SelectedIndex == 3)
 			{
-//				Eigene Verknüfung
-				
+				// Eigene Verknüfung
+				eigene_verk dialog2 = new eigene_verk();
+				dialog2.ShowDialog();
 				this.Close();
-				hauptform.eigene_verk_offnen();
-
 			}
-			
-			if(comboBox1.SelectedIndex == 4)
+			else
 			{
-				FileInfo FI = new FileInfo(String.Concat(Environment.GetFolderPath(Environment.SpecialFolder.SendTo),"\\Compressed (zipped) Folder.ZFSendToTarget"));
+				FileInfo FI;
+				
+				if(comboBox1.SelectedIndex == 0)
+				{
+					FI = new FileInfo(String.Concat(Environment.GetFolderPath(Environment.SpecialFolder.SendTo),"\\Desktop (create shortcut).DeskLink"));
+				}
+			
+				else if(comboBox1.SelectedIndex == 1)
+				{
+					//E-Mail Empfänger
+					if(isXP())
+					{
+						FI = new FileInfo(String.Concat(Environment.GetFolderPath(Environment.SpecialFolder.SendTo),"\\Mail Recipient.MAPIMai"));
+
+					}
+					
+					// Dokumente
+					else
+					{
+						FI = new FileInfo(String.Concat(Environment.GetFolderPath(Environment.SpecialFolder.SendTo),"\\Dokumente.mydocs"));
+					}
+				}
+			
+				else if(comboBox1.SelectedIndex == 2)
+				{
+					// Eigene Dateien
+					if(isXP())
+					{
+						FI = new FileInfo(String.Concat(Environment.GetFolderPath(Environment.SpecialFolder.SendTo),"\\Eigene Dateien.mydocs"));
+
+					}
+					// E-Mail Empfänger
+					else
+					{
+						FI = new FileInfo(String.Concat(Environment.GetFolderPath(Environment.SpecialFolder.SendTo),"\\Mail Recipient.MAPIMail"));
+					}
+				}
+					
+				else
+				{
+					FI = new FileInfo(String.Concat(Environment.GetFolderPath(Environment.SpecialFolder.SendTo),"\\Compressed (zipped) Folder.ZFSendToTarget"));
+				}
+				
 				FileStream FS = FI.Create();
 				FS.Close();
 				this.Close();
-				hauptform.einlesen();
 			}
 		}
 	}
