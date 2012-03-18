@@ -90,6 +90,8 @@ namespace sendto_editieren
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.textBox1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "verk_edit";
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.Text = "Einen Eintrag berabeiten";

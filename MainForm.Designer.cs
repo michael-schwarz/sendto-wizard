@@ -118,9 +118,10 @@ namespace sendto_editieren
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.listBox1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
 			this.Name = "MainForm";
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-			this.Text = "Sendto Wizard 1.2";
+			this.Text = "Sendto Wizard 1.3";
 			this.contextMenuStrip1.ResumeLayout(false);
 			this.ResumeLayout(false);
 		}
