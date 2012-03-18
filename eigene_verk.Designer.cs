@@ -61,7 +61,7 @@ namespace sendto_editieren
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(118, 23);
 			this.label1.TabIndex = 1;
-			this.label1.Text = "Name des Eintargs";
+			this.label1.Text = "Name des Eintrags";
 			this.label1.Click += new System.EventHandler(this.Label1Click);
 			// 
 			// label2
@@ -70,7 +70,7 @@ namespace sendto_editieren
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(118, 23);
 			this.label2.TabIndex = 2;
-			this.label2.Text = "Ziel des Eintargs";
+			this.label2.Text = "Ziel des Eintrags";
 			// 
 			// radioButton1
 			// 
@@ -116,6 +116,7 @@ namespace sendto_editieren
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.ClientSize = new System.Drawing.Size(476, 191);
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.button1);
@@ -127,7 +128,8 @@ namespace sendto_editieren
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "eigene_verk";
 			this.ShowInTaskbar = false;
-			this.Text = "Eigenen Eintarg erstellen";
+			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+			this.Text = "Eigenen Eintrag erstellen";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}

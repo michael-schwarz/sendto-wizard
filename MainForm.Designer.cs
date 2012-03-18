@@ -109,7 +109,7 @@ namespace sendto_editieren
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.AutoSize = true;
+			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.ClientSize = new System.Drawing.Size(453, 323);
 			this.Controls.Add(this.linkLabel1);
 			this.Controls.Add(this.label1);
@@ -119,6 +119,7 @@ namespace sendto_editieren
 			this.Controls.Add(this.listBox1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "MainForm";
+			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.Text = "Sendto Wizard 1.2";
 			this.ResumeLayout(false);
 		}
