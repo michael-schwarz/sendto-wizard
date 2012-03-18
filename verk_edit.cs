@@ -85,7 +85,7 @@ namespace sendto_editieren
 			{
 			File.Move(pfad,neuername);
 			this.Close();
-			hauptform.einlesen(this);
+			hauptform.einlesen();
 			}
 			catch(IOException)
 			{

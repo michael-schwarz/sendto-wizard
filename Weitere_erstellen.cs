@@ -78,7 +78,7 @@ namespace sendto_editieren
 				FileStream FS = FI.Create();
 				FS.Close();
 				this.Close();
-				hauptform.einlesen(hauptform);
+				hauptform.einlesen();
 			}
 			
 			if(comboBox1.SelectedIndex == 1)
@@ -90,7 +90,7 @@ namespace sendto_editieren
 				FileStream FS = FI.Create();
 				FS.Close();
 				this.Close();
-				hauptform.einlesen(hauptform);
+				hauptform.einlesen();
 				}
 				// Dokumente
 				else
@@ -99,7 +99,7 @@ namespace sendto_editieren
 				FileStream FS = FI.Create();
 				FS.Close();
 				this.Close();
-				hauptform.einlesen(hauptform);
+				hauptform.einlesen();
 				}
 			}
 			
@@ -112,7 +112,7 @@ namespace sendto_editieren
 				FileStream FS = FI.Create();
 				FS.Close();
 				this.Close();
-				hauptform.einlesen(hauptform);	
+				hauptform.einlesen();	
 				}
 				// E-Mail Empfänger
 				else
@@ -121,7 +121,7 @@ namespace sendto_editieren
 				FileStream FS = FI.Create();
 				FS.Close();
 				this.Close();
-				hauptform.einlesen(hauptform);
+				hauptform.einlesen();
 				}
 			}
 			
@@ -140,7 +140,7 @@ namespace sendto_editieren
 				FileStream FS = FI.Create();
 				FS.Close();
 				this.Close();
-				hauptform.einlesen(hauptform);
+				hauptform.einlesen();
 			}
 		}
 	}
