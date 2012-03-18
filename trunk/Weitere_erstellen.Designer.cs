@@ -100,6 +100,7 @@ namespace sendto_editieren
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "Weitere_erstellen";
 			this.ShowInTaskbar = false;
+			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.Text = "Eine neuen Eintrag erstellen";
 			this.ResumeLayout(false);
 		}

@@ -36,13 +36,17 @@ namespace sendto_editieren
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.listBox1 = new System.Windows.Forms.ListBox();
+			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.umbenennenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.button1 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+			this.contextMenuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// listBox1
@@ -53,6 +57,19 @@ namespace sendto_editieren
 			this.listBox1.Size = new System.Drawing.Size(432, 212);
 			this.listBox1.TabIndex = 0;
 			this.listBox1.SelectedIndexChanged += new System.EventHandler(this.ListBox1SelectedIndexChanged);
+			// 
+			// contextMenuStrip1
+			// 
+			this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+									this.umbenennenToolStripMenuItem});
+			this.contextMenuStrip1.Name = "contextMenuStrip1";
+			this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
+			// 
+			// umbenennenToolStripMenuItem
+			// 
+			this.umbenennenToolStripMenuItem.Name = "umbenennenToolStripMenuItem";
+			this.umbenennenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.umbenennenToolStripMenuItem.Text = "Umbenennen";
 			// 
 			// button1
 			// 
@@ -121,8 +138,11 @@ namespace sendto_editieren
 			this.Name = "MainForm";
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.Text = "Sendto Wizard 1.2";
+			this.contextMenuStrip1.ResumeLayout(false);
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.ToolStripMenuItem umbenennenToolStripMenuItem;
+		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
 		private System.Windows.Forms.LinkLabel linkLabel1;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button button3;

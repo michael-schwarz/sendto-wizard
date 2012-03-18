@@ -63,7 +63,7 @@ namespace sendto_editieren
 					sc.Description = textBox1.Text;  
 					sc.Save();
 					this.Close();
-					hauptform.einlesen(this);
+					hauptform.einlesen();
 				}
 			}
 		}

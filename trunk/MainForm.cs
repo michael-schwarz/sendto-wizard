@@ -1,12 +1,3 @@
-/*
- * Erstellt mit SharpDevelop.
- * Benutzer: Michael
- * Datum: 06.02.2009
- * Zeit: 18:29
- * 
- * Sie können diese Vorlage unter Extras > Optionen > Codeerstellung > Standardheader ändern.
- */
-
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -31,15 +22,19 @@ namespace sendto_editieren
 			//
 			InitializeComponent();
 
-			einlesen(this);
+			listBox1.MouseDown += new MouseEventHandler(listBox1_down);
+			
+			einlesen();
 			diesesform = this;
+			
+			
 		}
 		
-		public void einlesen(object sender)
+		public void einlesen()
 		{
 			
 			listBox1.Items.Clear();
-			
+
 			// Sendto Ordner
 			string sendto = Environment.GetFolderPath(Environment.SpecialFolder.SendTo);
 
@@ -51,46 +46,44 @@ namespace sendto_editieren
 			
 			// Pfad zu Desktop.ini
 			
-			string desktop = String.Concat(sendto, "\\Desktop.ini" );
-			string desktop2 = String.Concat(sendto, "\\desktop.ini" );
+			string desktop = String.Concat(sendto, "\\Desktop.ini" ).ToLower();
 			int i = 0;
 			foreach (string datei in Files)
 			{
 				// Desktop.ini ist kein SendTo Element
-				if(datei != desktop && datei != desktop2)
-				{
+				if(datei.ToLower() != desktop)
+				{	
+					string name = datei.Replace(String.Concat(sendto, "\\" ),"");
 				
-				
-				string name = datei.Replace(String.Concat(sendto, "\\" ),"");
-				
-				if(name == "Compressed (zipped) Folder.ZFSendToTarget")
+					if(name == "Compressed (zipped) Folder.ZFSendToTarget")
 					{
-					name = "ZIP-komprimierten Ordner";
+						name = "ZIP-komprimierten Ordner";
 					}
 				
-				if(name == "Desktop (create shortcut).DeskLink")
+					if(name == "Desktop (create shortcut).DeskLink")
 					{
-					name = "Desktop (Verknüpfung erstellen)";
+						name = "Desktop (Verknüpfung erstellen)";
 					}
 				
-				if(name == "Dokumente.mydocs")
+					if(name == "Dokumente.mydocs")
 					{
-					name = "Dokumente";
+						name = "Dokumente";
 					}
 				
-				if(name == "Mail Recipient.MAPIMail")
+					if(name == "Mail Recipient.MAPIMail")
 					{
-					name = "E-Mail-Empfänger";
+						name = "E-Mail-Empfänger";
 					}
-				name= name.Replace(".lnk","");
-				name= name.Replace(".DeskLink","");
-				name= name.Replace(".ZFSendToTarget","");
-				name= name.Replace(".MAPIMail","");
-				name= name.Replace(".mydocs","");
-				// Pfad dem Array hinzufügen, Name der Auflistung
-				listBox1.Items.Add(name);
-				auswahl_dateien[i] = datei;
-				i++;
+					
+					name= name.Replace(".lnk","");
+					name= name.Replace(".DeskLink","");
+					name= name.Replace(".ZFSendToTarget","");
+					name= name.Replace(".MAPIMail","");
+					name= name.Replace(".mydocs","");
+					// Pfad dem Array hinzufügen, Name der Auflistung
+					listBox1.Items.Add(name);
+					auswahl_dateien[i] = datei;
+					i++;
 				
 				}
 			
@@ -98,6 +91,24 @@ namespace sendto_editieren
 			}
 		}
 
+		
+		void listBox1_down(object sender,MouseEventArgs e)
+		{
+			try
+			{
+				//Selects the item that was clicked on
+				if(e.Button == MouseButtons.Right && listBox1.IndexFromPoint(e.X,e.Y) != ListBox.NoMatches)
+				{
+					listBox1.SelectedIndex = listBox1.IndexFromPoint(e.X,e.Y);
+					contextMenuStrip1.Show(listBox1,e.X,e.Y);
+				}
+			}
+			catch(Exception)
+			{
+				
+			}
+		}
+		
 		
 		void ListBox1SelectedIndexChanged(object sender, EventArgs e)
 		{
@@ -112,7 +123,7 @@ namespace sendto_editieren
 		void Button1Click(object sender, EventArgs e)
 		{
 			System.IO.File.Delete(auswahl_dateien[listBox1.SelectedIndex]);
-			einlesen(sender);
+			einlesen();
 		}
 		
 		void Button2Click(object sender, EventArgs e)
