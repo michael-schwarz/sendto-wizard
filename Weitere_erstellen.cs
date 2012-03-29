@@ -102,8 +102,17 @@ namespace sendto_editieren
 					FI = new FileInfo(String.Concat(Environment.GetFolderPath(Environment.SpecialFolder.SendTo),"\\Compressed (zipped) Folder.ZFSendToTarget"));
 				}
 				
-				FileStream FS = FI.Create();
-				FS.Close();
+				
+				if(FI.Exists)
+				{
+					MessageBox.Show("Dieser Eintrag befindet sich bereits im Senden an Menü.");
+				}
+				else
+				{
+					FileStream FS = FI.Create();
+					FS.Close();
+				}
+				
 				this.Close();
 			}
 		}
