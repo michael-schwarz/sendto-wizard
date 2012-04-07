@@ -110,8 +110,8 @@ namespace sendto_editieren
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(496, 32);
 			this.label1.TabIndex = 10;
-			this.label1.Text = "Mit dem Programm Sendto Wizard von programs.xe.cx kannst du einfach und bequem di" +
-			"e Einträge im Menü Senden an editieren. \r\n\r\n";
+			this.label1.Text = "Mit dem Programm Sendto Wizard von mbscWare kannst du einfach und bequem die Eint" +
+			"räge im Menü Senden an editieren. \r\n\r\n";
 			// 
 			// label3
 			// 
@@ -120,13 +120,14 @@ namespace sendto_editieren
 			this.label3.Size = new System.Drawing.Size(625, 53);
 			this.label3.TabIndex = 18;
 			this.label3.Text = "Dieses Programm ist Open Source nähere Informationen dazu in der unten befindlich" +
-			"en Box.\r\n\r\nUpdates und Problemlösungen sind auf der Herstellerseite programs.xe." +
-			"cx verfügbar.";
+			"en Box.\r\n\r\nUpdates und Problemlösungen sind auf der Herstellerseite mbscware.com" +
+			" verfügbar.";
 			// 
 			// about_st
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.ClientSize = new System.Drawing.Size(653, 369);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label5);
@@ -137,7 +138,10 @@ namespace sendto_editieren
 			this.Controls.Add(this.linkLabel1);
 			this.Controls.Add(this.label1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "about_st";
+			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.Text = "Über Sendto Wizard";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);

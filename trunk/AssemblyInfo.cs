@@ -12,7 +12,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Sendto Wizard 1.3")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Michael Schwarz for programs.xe.cx")]
+[assembly: AssemblyCompany("mbscware.com")]
 [assembly: AssemblyProduct("Sendto Wizard 1.3")]
 [assembly: AssemblyCopyright("Michael Schwarz under GNU GPL v3 or later")]
 [assembly: AssemblyTrademark("")]

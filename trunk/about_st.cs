@@ -17,16 +17,13 @@ namespace sendto_editieren
 	{
 		public about_st()
 		{
-			//
-			// The InitializeComponent() call is required for Windows Forms designer support.
-			//
 			InitializeComponent();
 			textBox2.Text = Application.ProductVersion;
 		}
 		
 		void LinkLabel1LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
-			System.Diagnostics.Process.Start("http://programs.xe.cx/");			
+			System.Diagnostics.Process.Start("http://mbscware.com/programme/sendto_wizard/");			
 		}
 	}
 }
