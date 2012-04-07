@@ -5,9 +5,9 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>sendto_editieren</RootNamespace>
-    <AssemblyName>sendto_editieren</AssemblyName>
-    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <RootNamespace>sendto_wizard</RootNamespace>
+    <AssemblyName>sendto_wizard</AssemblyName>
+    <ApplicationIcon>newIcon.ico</ApplicationIcon>
     <SignAssembly>False</SignAssembly>
     <DelaySign>False</DelaySign>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
