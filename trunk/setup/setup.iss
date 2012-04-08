@@ -7,19 +7,20 @@
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
 AppId={{74234A6E-19B1-4BFC-9360-99C03C866926}
 AppName=Sendto Wizard
-AppVerName=Sendto Wizard 1.2
-AppPublisher=Michael Schwarz
-AppPublisherURL=http://programs.xe.cx/
-AppSupportURL=http://programs.xe.cx/
-AppUpdatesURL=http://programs.xe.cx/
+AppVerName=Sendto Wizard 1.3
+AppPublisher=mbscWare
+AppPublisherURL=http://mbscware.com/
+AppSupportURL=http://mbscware.com/
+AppUpdatesURL=http://mbscware.com/
 DefaultDirName={pf}\Sendto Wizard
 DefaultGroupName=Sendto Wizard
-LicenseFile=C:\Users\Michael\Documents\SharpDevelop Projects\sendto_editieren\bin\Release\license_short.txt
-OutputDir=C:\Users\Michael\Documents\SharpDevelop Projects\sendto_editieren\setup
+LicenseFile=..\bin\Release\license_short.txt
+OutputDir=..\setup
 OutputBaseFilename=setup
-SetupIconFile=C:\Users\Michael\Documents\SharpDevelop Projects\sendto_editieren\icon.ico
+SetupIconFile=..\newIcon.ico
 Compression=lzma
 SolidCompression=yes
+
 
 [Languages]
 Name: "german"; MessagesFile: "compiler:Languages\German.isl"
@@ -28,17 +29,17 @@ Name: "german"; MessagesFile: "compiler:Languages\German.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\Michael\Documents\SharpDevelop Projects\sendto_editieren\bin\Release\sendto_wizard.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Michael\Documents\SharpDevelop Projects\sendto_editieren\bin\Release\Interop.IWshRuntimeLibrary.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Michael\Documents\SharpDevelop Projects\sendto_editieren\bin\Release\Interop.WSHControllerLibrary.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Michael\Documents\SharpDevelop Projects\sendto_editieren\bin\Release\license.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\bin\Release\sendto_wizard.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\bin\Release\Interop.IWshRuntimeLibrary.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\bin\Release\Interop.WSHControllerLibrary.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\bin\Release\license.txt"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
-Name: "{group}\Sendto wizard"; Filename: "{app}\sendto_wizard.exe"
-Name: "{group}\{cm:UninstallProgram,Sendto wizard}"; Filename: "{uninstallexe}"
-Name: "{commondesktop}\Sendto wizard"; Filename: "{app}\sendto_wizard.exe"; Tasks: desktopicon
+Name: "{group}\Sendto Wizard"; Filename: "{app}\sendto_wizard.exe"
+Name: "{group}\{cm:UninstallProgram,Sendto Wizard}"; Filename: "{uninstallexe}"
+Name: "{commondesktop}\Sendto Wizard"; Filename: "{app}\sendto_wizard.exe"; Tasks: desktopicon
 
 [Run]
-Filename: "{app}\sendto_wizard.exe"; Description: "{cm:LaunchProgram,Sendto wizard}"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\sendto_wizard.exe"; Description: "{cm:LaunchProgram,Sendto Wizard}"; Flags: nowait postinstall skipifsilent
 
